@@ -1,6 +1,11 @@
 # Diceville
 
-A repo with a quick example of LiveView + PubSub
+A repo with a quick example of LiveView + PubSub subscribe/broadcast.
+
+The example LiveView is in `/lib/diceville_web/live/`:
+
+- `/live/page_live.ex` - The LiveView `mount` + event handlers
+- `/live/page_live.html.leex` - The LiveView template
 
 From [Hoptalks: Intro to Elixir](https://docs.google.com/presentation/d/1EbC2HXJBZxygAqaUNNBw0LsdpuDRt_Ur23i7oymM-C8/edit?usp=sharing)
 
