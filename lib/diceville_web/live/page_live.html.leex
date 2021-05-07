@@ -1,0 +1,31 @@
+<section class="phx-hero">
+  <%= if @username == nil do %>
+    <h1>Enter a Username</h1>
+    <form phx-submit="set_username">
+      <input type="text" name="username" placeholder="Type username" autocomplete="off"/>
+      <button type="submit" phx-disable-with="Saving...">
+        Submit
+      </button>
+    </form>
+  <% else %>
+    <%= if @roll_result == nil do %>
+      <h1>Roll the dice, <%= @username %>!</h1>
+    <% else %>
+      <h1>You rolled <%= @roll_result %>
+    <% end %>
+
+    <button type="button" name="dice-button"
+    phx-click="roll">
+      🎲
+    </button>
+
+    <ul>
+    <%= for {username, roll} <- @rollers do %>
+      <li>
+      <%= "#{username} rolled #{roll} " %>
+      </li>
+    <% end %>
+    </ul>
+  <% end %>
+
+</section>
